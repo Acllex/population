@@ -84,7 +84,6 @@ export default {
       }
     },
     async onSubmit() {
-      console.log(this.newform.estate);
       this.information.estate = this.newform.estate;
       let res = await saveInformation(this.information);
       let { code } = res.data;
@@ -115,7 +114,6 @@ export default {
         if (!newVal) {
           return;
         }
-        console.log(newVal);
         let res = await queryEstate({ area: newVal });
         this.newestate = res.data.data;
       },

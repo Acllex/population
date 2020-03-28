@@ -110,14 +110,12 @@ export default {
     },
     async onSubmit() {
       let res = await upInformation(this.form);
-      console.log(res);
       if (res.data.code === 200) {
         this.$set(this.people, this.index, this.form);
         this.dialogFormVisible = false;
       }
     },
     async handleEdit(i, row) {
-      console.log(i, row);
       this.index = i;
       this.form = {
         _id: row._id,
@@ -134,7 +132,6 @@ export default {
       this.index = i;
     },
     async delPeople(index) {
-      console.log(index);
       let res = await delInformation(this.people[index]._id);
       if(res.data.code===200){
         this.visible = false;

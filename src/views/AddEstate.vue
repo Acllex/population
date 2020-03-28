@@ -57,12 +57,9 @@ export default {
       }
     },
     async onSubmit() {
-      console.log(this.newform.area);
       let oldres = await queryEstate();
       let { data } = oldres.data;
       let bool = data.every(ele=>ele.estate === this.newestate.estate);
-      console.log(bool);
-      
       if (!bool) {
         this.$message({
           message: "重复的小区名字"
